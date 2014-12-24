@@ -1,4 +1,2 @@
-redacted-spawnbot-plugin
+Plugins for Redacted
 ========================
-
-Plugin for redacted to spawn bots
