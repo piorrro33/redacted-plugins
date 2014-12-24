@@ -22,10 +22,6 @@ char* Bots::NameList[] =
 
 void Bots::Initialize()
 {
-	// Register commands
-	Global::Dependency::Import::Cmd_AddCommand("spawnBot", Bots::Spawn_f);
-	Global::Dependency::Import::Cmd_AddCommand("autoChangeClass", Bots::ChangeClass_f);
-
 	// Replace staff array with custom one
 	*(char***)Addresses::BotArray1 = Bots::NameList;
 	*(char***)Addresses::BotArray2 = Bots::NameList;
@@ -41,6 +37,13 @@ void Bots::Initialize()
 	// Apply new clan tags
 	*(char**)Addresses::BotTag1 = "connect \"\\invited\\1\\cg_predictItems\\1\\cl_anonymous\\0\\color\\4\\head\\default\\model\\multi\\snaps\\20\\rate\\5000\\name\\%s\\clanAbbrev\\" BOT_CLAN_TAG "\\xuid\\%s\\xnaddr\\%s\\natType\\2\\protocol\\%d\\netfieldchk\\%d\\sessionmode\\%d\\migrating\\1\"";
 	*(char**)Addresses::BotTag2 = "connect \"\\invited\\1\\cg_predictItems\\1\\cl_anonymous\\0\\color\\4\\head\\default\\model\\multi\\snaps\\20\\rate\\5000\\name\\%s\\clanAbbrev\\" BOT_CLAN_TAG "\\xuid\\%s\\xnaddr\\%s\\natType\\2\\protocol\\%d\\netfieldchk\\%d\\sessionmode\\%d\\qport\\%d\"";
+}
+
+void Bots::PostInit()
+{
+	// Register commands
+	Global::Dependency::Import::Cmd_AddCommand("spawnBot", Bots::Spawn_f);
+	Global::Dependency::Import::Cmd_AddCommand("autoChangeClass", Bots::ChangeClass_f);
 }
 
 void Bots::Spawn_f()

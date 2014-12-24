@@ -2,18 +2,33 @@ class Addresses
 {
 public:
 
-	// Bot.cpp
-	static DWORD BotArray1;
-	static DWORD BotArray2;
-	static DWORD BotArray3;
+	// Colored name
+	static DWORD ColoredName;
 
-	static DWORD BotArraySize1;
-	static DWORD BotArraySize2;
-	static DWORD BotArraySize3;
-	static DWORD BotArraySize4;
+	// Colored names ingame
+	static DWORD ClientUserinfoChanged;
 
-	static DWORD BotTag1;
-	static DWORD BotTag2;
+	// CL_GetClientName
+	static DWORD GetClientName;
+
+	// Killfeed
+	static DWORD GetClientName1;
+	static DWORD GetClientName2;
+
+	// Spectator
+	static DWORD GetClientName3;
+
+	// I_CleanStr hook
+	static DWORD ICleanStrHook;
+	static DWORD ICleanStr;
+
+	// Min name length
+	static DWORD NameLength1;
+	static DWORD NameLength2;
+
+	// Colortables
+	static DWORD ColorTableFloat;
+	static DWORD ColorTableByte;
 
 	static void Assign();
 	static void AssignFromPattern();

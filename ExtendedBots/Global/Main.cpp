@@ -1,5 +1,7 @@
 #include "..\STDInclude.h"
 
+bool Global::Main::PreInitSucceeded = false;
+
 int Global::Main::PreInit()
 {
 	// Check environment
@@ -32,11 +34,17 @@ int Global::Main::PreInit()
 	// Main initialization
 	Bots::Initialize();
 
+	Global::Main::PreInitSucceeded = true;
 	return TRUE;
 }
 
 int Global::Main::PostInit()
 {
+	if (Global::Main::PreInitSucceeded)
+	{
+		Bots::PostInit();
+	}
+	
 	return TRUE;
 }
 

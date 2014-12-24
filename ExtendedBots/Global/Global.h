@@ -75,6 +75,8 @@ class Global
 		{
 			public:
 
+				static bool PreInitSucceeded;
+
 				static int PreInit();
 				static int PostInit();
 				static int ParseMessage(const char* message);

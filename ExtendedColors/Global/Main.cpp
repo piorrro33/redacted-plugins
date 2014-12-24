@@ -20,6 +20,9 @@ int Global::Main::PreInit()
 	// Assign values according to the current gameversion
 	Addresses::Assign();
 
+	// Main initialization
+	Patches::Apply();
+
 	return TRUE;
 }
 

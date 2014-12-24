@@ -15,6 +15,7 @@
     <ClCompile Include="Export\Export.cpp" />
     <ClCompile Include="Global\Global.cpp" />
     <ClCompile Include="Global\Main.cpp" />
+    <ClCompile Include="Patches\Patches.cpp" />
     <ClCompile Include="Utility\Hooking.cpp" />
     <ClCompile Include="Utility\Patterns.cpp" />
     <ClCompile Include="Utility\VariadicString.cpp" />
@@ -23,6 +24,7 @@
     <ClInclude Include="Addresses\Addresses.h" />
     <ClInclude Include="Export\Export.h" />
     <ClInclude Include="Global\Global.h" />
+    <ClInclude Include="Patches\Patches.h" />
     <ClInclude Include="STDInclude.h" />
     <ClInclude Include="Struct\T6.h" />
     <ClInclude Include="Utility\Hooking.h" />

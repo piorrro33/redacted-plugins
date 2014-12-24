@@ -15,5 +15,7 @@
 
 #include "Addresses\Addresses.h"
 
+#include "Patches\Patches.h"
+
 #include "Global\Global.h"
 #include "Export\Export.h"

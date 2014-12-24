@@ -16,6 +16,9 @@
     <Filter Include="Addresses">
       <UniqueIdentifier>{7365c5f5-57d3-434a-987f-5cd7c9a80c51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Patches">
+      <UniqueIdentifier>{03d30831-094f-47f6-b82b-4f0bbf350336}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Export\Export.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Addresses\Addresses.cpp">
       <Filter>Addresses</Filter>
+    </ClCompile>
+    <ClCompile Include="Patches\Patches.cpp">
+      <Filter>Patches</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="Addresses\Addresses.h">
       <Filter>Addresses</Filter>
+    </ClInclude>
+    <ClInclude Include="Patches\Patches.h">
+      <Filter>Patches</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

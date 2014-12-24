@@ -13,6 +13,7 @@ class Bots
 	public:
 
 		static void Initialize();
+		static void PostInit();
 		static void Spawn(int count);
 
 	private:

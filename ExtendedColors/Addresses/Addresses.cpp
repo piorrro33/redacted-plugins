@@ -2,18 +2,33 @@
 
 // Version 40 addresses as default
 
-// Bot.cpp
-DWORD Addresses::BotArray1 = 0x49214B;
-DWORD Addresses::BotArray2 = 0x492168;
-DWORD Addresses::BotArray3 = 0x4F7DA1;
+// Colored name
+DWORD Addresses::ColoredName           = 0x64C31F;
 
-DWORD Addresses::BotArraySize1 = 0x49213B;
-DWORD Addresses::BotArraySize2 = 0x49215B;
-DWORD Addresses::BotArraySize3 = 0x4F7D7F;
-DWORD Addresses::BotArraySize4 = 0x4F7D94;
+// Colored names ingame
+DWORD Addresses::ClientUserinfoChanged = 0x81ED10;
 
-DWORD Addresses::BotTag1 = 0x644183;
-DWORD Addresses::BotTag2 = 0x62C28C;
+// CL_GetClientName
+DWORD Addresses::GetClientName         = 0x61E650;
+
+// Killfeed
+DWORD Addresses::GetClientName1        = 0x7A2939;
+DWORD Addresses::GetClientName2        = 0x7A29AC;
+
+// Spectator
+DWORD Addresses::GetClientName3        = 0x9773D3;
+
+// I_CleanStr hook
+DWORD Addresses::ICleanStrHook         = 0x61E6EA;
+DWORD Addresses::ICleanStr             = 0x6DAF80;
+
+// Min name length
+DWORD Addresses::NameLength1           = 0x4C8BAB;
+DWORD Addresses::NameLength2           = 0x4A2C53;
+
+// Colortables
+DWORD Addresses::ColorTableFloat       = 0xC63C50;
+DWORD Addresses::ColorTableByte        = 0xD254B8;
 
 void Addresses::Assign()
 {
@@ -21,26 +36,77 @@ void Addresses::Assign()
 
 	switch (Global::Game::Version)
 	{
-	case GAME_VERSION_43:
-	{
-		// Bot.cpp
-		Addresses::BotArray1 = 0x6A2C9B;
-		Addresses::BotArray2 = 0x6A2CA8;
-		Addresses::BotArray3 = 0x667E61;
+		case GAME_VERSION_39:
+		{
+			// Colored name
+			Addresses::ColoredName           = 0x6F27AF;
 
-		Addresses::BotArraySize1 = 0x6A2C7B;
-		Addresses::BotArraySize2 = 0x6A2C9B;
-		Addresses::BotArraySize3 = 0x667E3F;
-		Addresses::BotArraySize4 = 0x667E54;
+			// Colored names ingame
+			Addresses::ClientUserinfoChanged = 0x8120F0;
 
-		Addresses::BotTag1 = 0x679BF3;
-		Addresses::BotTag2 = 0x5515FC;
-		break;
-	}
+			// Min name length
+			Addresses::NameLength1           = 0x52FFAB;
+			Addresses::NameLength2           = 0x54DDD3;
+
+			// Colortables
+			Addresses::ColorTableFloat       = 0xC26690;
+			Addresses::ColorTableByte        = 0xCE4BB8;
+			break;
+		}
+
+		case GAME_VERSION_41:
+		{
+			// Colored name
+			Addresses::ColoredName           = 0x40906F;
+
+			// Colored names ingame
+			Addresses::ClientUserinfoChanged = 0x81F230;
+
+			// Min name length
+			Addresses::NameLength1           = 0x4CF5AB;
+			Addresses::NameLength2           = 0x53B0C3;
+
+			// Colortables
+			Addresses::ColorTableFloat       = 0xC64840;
+			Addresses::ColorTableByte        = 0xD24A28;
+			break;
+		}
+
+		case GAME_VERSION_43:
+		{
+			// Colored name
+			Addresses::ColoredName           = 0x6286FF;
+
+			// Colored names ingame
+			Addresses::ClientUserinfoChanged = 0x820830;
+
+			// CL_GetClientName
+			Addresses::GetClientName         = 0x5B0F50;
+
+			// Killfeed
+			Addresses::GetClientName1        = 0x7A4129;
+			Addresses::GetClientName2        = 0x7A419C;
+
+			// Spectator
+			Addresses::GetClientName3        = 0x9795A3;
+
+			// I_CleanStr hook
+			Addresses::ICleanStrHook         = 0x5B0FEA;
+			Addresses::ICleanStr             = 0x44F2B0;
+
+			// Min name length
+			Addresses::NameLength1           = 0x53F25B;
+			Addresses::NameLength2           = 0x5F0283;
+
+			// Colortables
+			Addresses::ColorTableFloat       = 0xC6EC80;
+			Addresses::ColorTableByte        = 0xD30A08;
+			break;
+		}
 	}
 }
 
 void Addresses::AssignFromPattern()
 {
-	// TODO: Add patterns
+	//TODO: Use patterns
 }
