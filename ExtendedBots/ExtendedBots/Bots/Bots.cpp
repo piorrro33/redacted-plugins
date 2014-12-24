@@ -8,18 +8,39 @@
 
 #include "..\STDInclude.h"
 
+// TODO: Fill that list with names
+char* Bots::NameList[] =
+{
+	"momo5502",
+	"Convery",
+	"men",
+	"YourMum",
+	"Stalin",
+	"Jesus",
+	"Juergen173"
+};
 
 void Bots::Initialize()
 {
+	// Register commands
 	Global::Dependency::Import::Cmd_AddCommand("spawnBot", Bots::Spawn_f);
 	Global::Dependency::Import::Cmd_AddCommand("autoChangeClass", Bots::ChangeClass_f);
 
-	Bots::InitializeStaff();
-}
+	// Replace staff array with custom one
+	*(char***)Addresses::BotArray1 = Bots::NameList;
+	*(char***)Addresses::BotArray2 = Bots::NameList;
+	*(char***)Addresses::BotArray3 = Bots::NameList;
 
-void Bots::InitializeStaff()
-{
-	// TODO: Replace botname array
+	// Apply new array size
+	int size = (sizeof(Bots::NameList) / sizeof(Bots::NameList[0]));
+	*(BYTE*)Addresses::BotArraySize1 = size;
+	*(BYTE*)Addresses::BotArraySize2 = size;
+	*(BYTE*)Addresses::BotArraySize3 = size;
+	*(BYTE*)Addresses::BotArraySize4 = size;
+
+	// Apply new clan tags
+	*(char**)Addresses::BotTag1 = "connect \"\\invited\\1\\cg_predictItems\\1\\cl_anonymous\\0\\color\\4\\head\\default\\model\\multi\\snaps\\20\\rate\\5000\\name\\%s\\clanAbbrev\\" BOT_CLAN_TAG "\\xuid\\%s\\xnaddr\\%s\\natType\\2\\protocol\\%d\\netfieldchk\\%d\\sessionmode\\%d\\migrating\\1\"";
+	*(char**)Addresses::BotTag2 = "connect \"\\invited\\1\\cg_predictItems\\1\\cl_anonymous\\0\\color\\4\\head\\default\\model\\multi\\snaps\\20\\rate\\5000\\name\\%s\\clanAbbrev\\" BOT_CLAN_TAG "\\xuid\\%s\\xnaddr\\%s\\natType\\2\\protocol\\%d\\netfieldchk\\%d\\sessionmode\\%d\\qport\\%d\"";
 }
 
 void Bots::Spawn_f()

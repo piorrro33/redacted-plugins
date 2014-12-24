@@ -13,6 +13,7 @@
 
 #include "Struct\T6.h"
 
+#include "Addresses\Addresses.h"
 #include "Functions\Functions.h"
 
 #include "Notify\Notify.h"

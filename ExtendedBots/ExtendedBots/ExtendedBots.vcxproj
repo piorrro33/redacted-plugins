@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Addresses\Addresses.cpp" />
     <ClCompile Include="Bots\Bots.cpp" />
     <ClCompile Include="Export\Export.cpp" />
     <ClCompile Include="Functions\Functions.cpp" />
@@ -22,6 +23,7 @@
     <ClCompile Include="Utility\VariadicString.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Addresses\Addresses.h" />
     <ClInclude Include="Bots\Bots.h" />
     <ClInclude Include="Export\Export.h" />
     <ClInclude Include="Functions\Functions.h" />

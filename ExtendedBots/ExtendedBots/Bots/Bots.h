@@ -6,6 +6,8 @@
 	Started: 2014-07-31
 */
 
+#define BOT_CLAN_TAG "RED"
+
 class Bots
 {
 	public:
@@ -15,7 +17,7 @@ class Bots
 
 	private:
 
-		static void InitializeStaff();
+		static char* NameList[];
 
 		static void Spawn_f();
 		static void ChangeClass_f();

@@ -22,6 +22,9 @@
     <Filter Include="Notify">
       <UniqueIdentifier>{1c24aad1-4c6c-45bf-b762-c17b9695e420}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Addresses">
+      <UniqueIdentifier>{7365c5f5-57d3-434a-987f-5cd7c9a80c51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Export\Export.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="Bots\Bots.cpp">
       <Filter>Bots</Filter>
+    </ClCompile>
+    <ClCompile Include="Addresses\Addresses.cpp">
+      <Filter>Addresses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="Bots\Bots.h">
       <Filter>Bots</Filter>
+    </ClInclude>
+    <ClInclude Include="Addresses\Addresses.h">
+      <Filter>Addresses</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
