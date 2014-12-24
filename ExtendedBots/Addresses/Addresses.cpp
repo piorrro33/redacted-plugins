@@ -24,7 +24,7 @@ void Addresses::Assign()
 	case GAME_VERSION_43:
 	{
 		// Bot.cpp
-		Addresses::BotArray1 = 0x6A2C9B;
+		Addresses::BotArray1 = 0x6A2C8B;
 		Addresses::BotArray2 = 0x6A2CA8;
 		Addresses::BotArray3 = 0x667E61;
 
