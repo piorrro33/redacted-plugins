@@ -26,6 +26,7 @@ int Global::Main::PreInit()
 	if (Global::Game::Type == GAME_TYPE_ZM) return FALSE; // Only MP!
 
 	// Assign values according to the current gameversion
+	Addresses::Assign();
 	Functions::Assign();
 
 	// Main initialization

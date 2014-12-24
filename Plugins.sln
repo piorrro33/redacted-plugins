@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExtendedBots", "ExtendedBots\ExtendedBots.vcxproj", "{6E6042B3-C549-48AF-8279-ADF1937A82B4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExtendedColors", "ExtendedColors\ExtendedColors.vcxproj", "{D5346503-C791-4E02-B2FE-465AFD51414A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{6E6042B3-C549-48AF-8279-ADF1937A82B4}.Debug|Win32.Build.0 = Debug|Win32
 		{6E6042B3-C549-48AF-8279-ADF1937A82B4}.Release|Win32.ActiveCfg = Release|Win32
 		{6E6042B3-C549-48AF-8279-ADF1937A82B4}.Release|Win32.Build.0 = Release|Win32
+		{D5346503-C791-4E02-B2FE-465AFD51414A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5346503-C791-4E02-B2FE-465AFD51414A}.Debug|Win32.Build.0 = Debug|Win32
+		{D5346503-C791-4E02-B2FE-465AFD51414A}.Release|Win32.ActiveCfg = Release|Win32
+		{D5346503-C791-4E02-B2FE-465AFD51414A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
