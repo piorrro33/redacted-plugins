@@ -20,7 +20,7 @@ EXPORT int32_t AuthorInfo()
 
 EXPORT int32_t ExtendedInfo()
 {
-	return (int32_t)"SpawnBot\n";
+	return (int32_t)"ExtendedBots\n";
 }
 
 EXPORT int32_t OfficialMod()
