@@ -135,4 +135,39 @@ char* Global::Dependency::Loaded()
 	return 0;
 }
 
+#pragma region Import
+
+// Functions
+Global::Dependency::Import::Com_Printf_t         Global::Dependency::Import::Com_Printf;
+Global::Dependency::Import::Cmd_AddCommand_t     Global::Dependency::Import::Cmd_AddCommand;
+Global::Dependency::Import::Cmd_ArgC_t           Global::Dependency::Import::Cmd_ArgC;
+Global::Dependency::Import::Cmd_ArgV_t           Global::Dependency::Import::Cmd_ArgV;
+Global::Dependency::Import::Cmd_ExecuteCommand_t Global::Dependency::Import::Cmd_ExecuteCommand;
+
+// Other
+bool Global::Dependency::Import::LoadImports()
+{
+	// Get ExtendedConsole handle
+	HMODULE extendedConsole = GetModuleHandleA("ExtendedConsole.Red32n");
+
+	// ExtendedConsole not loaded properly
+	if (!extendedConsole) return 0;
+
+	// Get exports from ExtendedConsole
+	Com_Printf         = (Com_Printf_t)GetProcAddress(extendedConsole, "Com_Printf");
+	Cmd_AddCommand     = (Cmd_AddCommand_t)GetProcAddress(extendedConsole, "Cmd_AddCommand");
+	Cmd_ArgC           = (Cmd_ArgC_t)GetProcAddress(extendedConsole, "Cmd_ArgC");
+	Cmd_ArgV           = (Cmd_ArgV_t)GetProcAddress(extendedConsole, "Cmd_ArgV");
+	Cmd_ExecuteCommand = (Cmd_ExecuteCommand_t)GetProcAddress(extendedConsole, "Cmd_ExecuteCommand");
+
+	// Return if exports got loaded
+	return (Com_Printf     &&
+		    Cmd_AddCommand && 
+			Cmd_ArgC       &&
+			Cmd_ArgV       &&
+			Cmd_ExecuteCommand);
+}
+
+#pragma endregion
+
 #pragma endregion

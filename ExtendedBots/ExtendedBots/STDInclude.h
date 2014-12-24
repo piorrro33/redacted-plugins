@@ -6,9 +6,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <vector>
-#include <timeapi.h>
-
-#pragma comment(lib, "Winmm.lib")
 
 #include "Utility\Patterns.h"
 #include "Utility\Hooking.h"
@@ -17,6 +14,9 @@
 #include "Struct\T6.h"
 
 #include "Functions\Functions.h"
+
+#include "Notify\Notify.h"
+#include "Bots\Bots.h"
 
 #include "Global\Global.h"
 #include "Export\Export.h"

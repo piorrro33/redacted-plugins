@@ -11,18 +11,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bots\Bots.cpp" />
     <ClCompile Include="Export\Export.cpp" />
     <ClCompile Include="Functions\Functions.cpp" />
     <ClCompile Include="Global\Global.cpp" />
     <ClCompile Include="Global\Main.cpp" />
+    <ClCompile Include="Notify\Notify.cpp" />
     <ClCompile Include="Utility\Hooking.cpp" />
     <ClCompile Include="Utility\Patterns.cpp" />
     <ClCompile Include="Utility\VariadicString.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bots\Bots.h" />
     <ClInclude Include="Export\Export.h" />
     <ClInclude Include="Functions\Functions.h" />
     <ClInclude Include="Global\Global.h" />
+    <ClInclude Include="Notify\Notify.h" />
     <ClInclude Include="STDInclude.h" />
     <ClInclude Include="Struct\T6.h" />
     <ClInclude Include="Utility\Hooking.h" />

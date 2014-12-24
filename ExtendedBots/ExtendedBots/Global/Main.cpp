@@ -17,15 +17,19 @@ int Global::Main::PreInit()
 		return FALSE;
 	}
 
+	if (!Global::Dependency::Import::LoadImports())
+	{
+		MessageBox(0, "Failed to load imports!", PROJECTLONG, MB_ICONERROR);
+		return FALSE;
+	}
+
 	if (Global::Game::Type == GAME_TYPE_ZM) return FALSE; // Only MP!
 
 	// Assign values according to the current gameversion
 	Functions::Assign();
 
 	// Main initialization
-// 	Input::Initialize();
-// 	Console::Initialize();
-// 	Renderer::Initialize();
+	Bots::Initialize();
 
 	return TRUE;
 }

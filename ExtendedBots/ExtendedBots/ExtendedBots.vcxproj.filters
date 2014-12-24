@@ -16,6 +16,12 @@
     <Filter Include="Functions">
       <UniqueIdentifier>{41d70d0c-07d7-49e3-8610-e1f4d188d948}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bots">
+      <UniqueIdentifier>{2ee6fe2c-3bc1-4176-a183-19b5f243c7e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Notify">
+      <UniqueIdentifier>{1c24aad1-4c6c-45bf-b762-c17b9695e420}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Export\Export.cpp">
@@ -38,6 +44,12 @@
     </ClCompile>
     <ClCompile Include="Utility\VariadicString.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Notify\Notify.cpp">
+      <Filter>Notify</Filter>
+    </ClCompile>
+    <ClCompile Include="Bots\Bots.cpp">
+      <Filter>Bots</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +74,12 @@
     <ClInclude Include="STDInclude.h" />
     <ClInclude Include="Struct\T6.h">
       <Filter>Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="Notify\Notify.h">
+      <Filter>Notify</Filter>
+    </ClInclude>
+    <ClInclude Include="Bots\Bots.h">
+      <Filter>Bots</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
