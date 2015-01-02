@@ -8,10 +8,10 @@ GameType Global::Game::Type       = GAME_TYPE_ERROR;
 // Detect current game version and type
 void Global::Game::DetectGame()
 {
-	switch (*(uint8_t*)0x40136F)
+	switch (*(DWORD*)0x41136F)
 	{
 		// Version 39
-		case 0xA6:
+		case 0x75C08500:
 		{
 			Global::Game::Version = GAME_VERSION_39;
 			Global::Game::Type    = GAME_TYPE_ZM;
@@ -19,7 +19,7 @@ void Global::Game::DetectGame()
 		}
 		
 		// Version 40
-		case 0xA9:
+		case 0x1F9C358B:
 		{
 			Global::Game::Version = GAME_VERSION_40;
 			Global::Game::Type    = GAME_TYPE_MP;
@@ -27,7 +27,7 @@ void Global::Game::DetectGame()
 		}
 
 		// Version 41
-		case 0xAA:
+		case 0x244C8BCC:
 		{
 			Global::Game::Version = GAME_VERSION_41;
 			Global::Game::Type    = GAME_TYPE_ZM;
@@ -35,10 +35,26 @@ void Global::Game::DetectGame()
 		}
 
 		// Version 43
-		case 0x99:
+		case 0x30C4835E:
 		{
 			Global::Game::Version = GAME_VERSION_43;
 			Global::Game::Type    = GAME_TYPE_MP;
+			break;
+		}
+
+		// Dedicated - debug version
+		case 0x0F0C7D8B:
+		{
+			Global::Game::Version = GAME_VERSION_DEDI_DEBUG;
+			Global::Game::Type    = GAME_TYPE_DEDI;
+			break;
+		}
+
+		// Dedicated - ship version
+		case 0x500B7400:
+		{
+			Global::Game::Version = GAME_VERSION_DEDI_DEBUG;
+			Global::Game::Type    = GAME_TYPE_DEDI;
 			break;
 		}
 
