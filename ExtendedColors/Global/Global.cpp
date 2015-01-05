@@ -19,7 +19,7 @@ void Global::Game::DetectGame()
 		}
 		
 		// Version 40
-		case 0x1F9C358B:
+		case 0x111F9C35:
 		{
 			Global::Game::Version = GAME_VERSION_40;
 			Global::Game::Type    = GAME_TYPE_MP;
