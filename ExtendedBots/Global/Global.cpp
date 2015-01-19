@@ -50,13 +50,13 @@ void Global::Game::DetectGame()
 			break;
 		}
 
-		// Dedicated - ship version
-		case 0x500B7400:
-		{
-			Global::Game::Version = GAME_VERSION_DEDI_SHIP;
-			Global::Game::Type    = GAME_TYPE_DEDI;
-			break;
-		}
+// 		// Dedicated - ship version
+// 		case 0x500B7400:
+// 		{
+// 			Global::Game::Version = GAME_VERSION_DEDI_SHIP;
+// 			Global::Game::Type    = GAME_TYPE_DEDI;
+// 			break;
+// 		}
 
 		default:
 		{

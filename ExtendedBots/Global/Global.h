@@ -8,7 +8,7 @@ typedef enum GameVersion
 	GAME_VERSION_41,
 	GAME_VERSION_43,
 	GAME_VERSION_DEDI_DEBUG,
-	GAME_VERSION_DEDI_SHIP,
+	//GAME_VERSION_DEDI_SHIP,
 	GAME_VERSION_ERROR = -1
 };
 
@@ -83,5 +83,7 @@ class Global
 				static int PreInit();
 				static int PostInit();
 				static int ParseMessage(const char* message);
+
+				static void InitRendererHook();
 		};
 };

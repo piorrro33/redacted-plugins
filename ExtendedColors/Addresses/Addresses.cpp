@@ -103,6 +103,38 @@ void Addresses::Assign()
 			Addresses::ColorTableByte        = 0xD30A08;
 			break;
 		}
+
+		case GAME_VERSION_DEDI_DEBUG:
+		{
+			// Colored name
+			Addresses::ColoredName           = 0; // Dedi doesn't need that
+
+			// Colored names ingame
+			Addresses::ClientUserinfoChanged = 0x5BC6C0;
+
+			// CL_GetClientName
+			Addresses::GetClientName         = 0x511900;
+
+			// Killfeed
+			Addresses::GetClientName1        = 0x44E169;
+			Addresses::GetClientName2        = 0x44E24E;
+
+			// Spectator
+			Addresses::GetClientName3        = 0; // Dedi doesn't need that
+
+			// I_CleanStr hook
+			Addresses::ICleanStrHook         = 0x51198B;
+			Addresses::ICleanStr             = 0x78E6B0;
+
+			// Min name length
+			Addresses::NameLength1           = 0x6E69DB;
+			Addresses::NameLength2           = 0x6E6B96;
+
+			// Colortables
+			Addresses::ColorTableFloat       = 0xBBACA0;
+			Addresses::ColorTableByte        = 0xD1E084;
+			break;
+		}
 	}
 }
 

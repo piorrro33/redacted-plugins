@@ -21,22 +21,39 @@ void Addresses::Assign()
 
 	switch (Global::Game::Version)
 	{
-	case GAME_VERSION_43:
-	{
-		// Bot.cpp
-		Addresses::BotArray1 = 0x6A2C8B;
-		Addresses::BotArray2 = 0x6A2CA8;
-		Addresses::BotArray3 = 0x667E61;
+		case GAME_VERSION_43:
+		{
+			// Bot.cpp
+			Addresses::BotArray1 = 0x6A2C8B;
+			Addresses::BotArray2 = 0x6A2CA8;
+			Addresses::BotArray3 = 0x667E61;
 
-		Addresses::BotArraySize1 = 0x6A2C7B;
-		Addresses::BotArraySize2 = 0x6A2C9B;
-		Addresses::BotArraySize3 = 0x667E3F;
-		Addresses::BotArraySize4 = 0x667E54;
+			Addresses::BotArraySize1 = 0x6A2C7B;
+			Addresses::BotArraySize2 = 0x6A2C9B;
+			Addresses::BotArraySize3 = 0x667E3F;
+			Addresses::BotArraySize4 = 0x667E54;
 
-		Addresses::BotTag1 = 0x679BF3;
-		Addresses::BotTag2 = 0x5515FC;
-		break;
-	}
+			Addresses::BotTag1 = 0x679BF3;
+			Addresses::BotTag2 = 0x5515FC;
+			break;
+		}
+
+		case GAME_VERSION_DEDI_DEBUG:
+		{
+			// Bot.cpp
+			Addresses::BotArray1 = 0x5B383B;
+			Addresses::BotArray2 = 0x5B3858;
+			Addresses::BotArray3 = 0x5B3965;
+
+			Addresses::BotArraySize1 = 0x5B382B;
+			Addresses::BotArraySize2 = 0x5B384B;
+			Addresses::BotArraySize3 = 0x5B3958;
+			Addresses::BotArraySize4 = 0x5B3943;
+
+			Addresses::BotTag1 = 0x6EA343;
+			Addresses::BotTag2 = 0x6EA643;
+			break;
+		}
 	}
 }
 

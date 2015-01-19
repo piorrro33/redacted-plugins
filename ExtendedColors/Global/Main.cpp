@@ -9,9 +9,6 @@ int Global::Main::PreInit()
 		return FALSE;
 	}
 
-	// No dedi support for now!
-	if (Global::Game::Type == GAME_TYPE_DEDI) return FALSE;
-
 	char* result = Global::Dependency::Loaded();
 
 	if (result)

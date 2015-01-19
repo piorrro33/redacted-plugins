@@ -19,15 +19,29 @@ void Functions::Assign()
 	{
 		case GAME_VERSION_43:
 		{
-			Functions::SL_GetString = (SL_GetString_t)0x602C40;
+			Functions::SL_GetString       = (SL_GetString_t)0x602C40;
 			Functions::SL_ConvertToString = (SL_ConvertToString_t)0x422D10;
-			Functions::Scr_NotifyNum = (Scr_NotifyNum_t)0x578690;
-			Functions::Scr_AddString = (Scr_AddString_t)0x4F1650;
-			Functions::Scr_AddEntity = (Scr_AddEntity_t)0x4C20F0;
-			Functions::Scr_AddInt = (Scr_AddInt_t)0x57AFF0;
-			Functions::Scr_GetString = (Scr_GetString_t)0x67C6A0;
-			Functions::SV_AddTestClient = (SV_AddTestClient_t)0x5514B0;
-			Functions::SV_Loaded = (SV_Loaded_t)0x510FC0;
+			Functions::Scr_NotifyNum      = (Scr_NotifyNum_t)0x578690;
+			Functions::Scr_AddString      = (Scr_AddString_t)0x4F1650;
+			Functions::Scr_AddEntity      = (Scr_AddEntity_t)0x4C20F0;
+			Functions::Scr_AddInt         = (Scr_AddInt_t)0x57AFF0;
+			Functions::Scr_GetString      = (Scr_GetString_t)0x67C6A0;
+			Functions::SV_AddTestClient   = (SV_AddTestClient_t)0x5514B0;
+			Functions::SV_Loaded          = (SV_Loaded_t)0x510FC0;
+			break;
+		}
+
+		case GAME_VERSION_DEDI_DEBUG:
+		{
+			Functions::SL_GetString = (SL_GetString_t)0x837080;
+			Functions::SL_ConvertToString = (SL_ConvertToString_t)0x835C00;
+			Functions::Scr_NotifyNum = (Scr_NotifyNum_t)0x846DA0;
+			Functions::Scr_AddString = (Scr_AddString_t)0x847BB0;
+			Functions::Scr_AddEntity = (Scr_AddEntity_t)0x634280;
+			Functions::Scr_AddInt = (Scr_AddInt_t)0x8478E0;
+			Functions::Scr_GetString = (Scr_GetString_t)0x852D70;
+			Functions::SV_AddTestClient = (SV_AddTestClient_t)0x6EA460;
+			Functions::SV_Loaded = (SV_Loaded_t)0x6EDD20;
 			break;
 		}
 	}

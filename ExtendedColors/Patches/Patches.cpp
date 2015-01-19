@@ -21,7 +21,7 @@ void Patches::Apply()
 	*(BYTE*)Addresses::NameLength2 = MIN_NAME_LENGTH;
 
 	// Allow colored names
-	QNOP(Addresses::ColoredName, 5);
+	if (Addresses::ColoredName) QNOP(Addresses::ColoredName, 5);
 
 	// Allow colored names ingame
 	QCALL(Addresses::ClientUserinfoChanged, Patches::ClientUserinfoChanged_Hook, QPATCH_JUMP);
@@ -34,7 +34,7 @@ void Patches::Apply()
 	QCALL(Addresses::GetClientName2, Patches::CL_GetClientName_Hook, QPATCH_CALL);
 
 	// Colors in spectator
-	QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Hook, QPATCH_CALL);
+	if (Addresses::GetClientName3) QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Hook, QPATCH_CALL);
 }
 
 void __declspec(naked) Patches::ClientUserinfoChanged_Hook()

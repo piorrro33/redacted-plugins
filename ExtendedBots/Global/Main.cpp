@@ -11,9 +11,6 @@ int Global::Main::PreInit()
 		return FALSE;
 	}
 
-	// No dedi support for now!
-	if (Global::Game::Type == GAME_TYPE_DEDI) return FALSE;
-
 	char* result = Global::Dependency::Loaded();
 
 	if (result)
@@ -37,8 +34,27 @@ int Global::Main::PreInit()
 	// Main initialization
 	Bots::Initialize();
 
+	// Dedi doesn't provide a proper post initialization point
+	// So we need this ugly hack
+	// Note to convery: Fix PostInit for dedis ;)
+	if (Global::Game::Version == GAME_VERSION_DEDI_DEBUG)
+	{
+		QCALL(0x50839B, Global::Main::InitRendererHook, QPATCH_CALL);
+	}
+
 	Global::Main::PreInitSucceeded = true;
 	return TRUE;
+}
+
+void __declspec(naked) Global::Main::InitRendererHook()
+{
+	Global::Main::PostInit();
+
+	__asm
+	{
+		mov eax, 6BC010h // Com_Printf
+		jmp eax
+	}
 }
 
 int Global::Main::PostInit()
