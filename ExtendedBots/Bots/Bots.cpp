@@ -42,6 +42,23 @@ char* Bots::NameList[] =
 	"Schackeline",
 	"GLaDOS",
 	"potato",
+	"Dasfonia",
+	"BassPro241",
+	"Mikl_da_Pikle",
+	"Vyriant",
+	"Diabeetus",
+	"Wilford Brimley",
+	"Ded Rededtion",
+	"Wade",
+	"Hank",
+	"Waldo",
+	"Chet",
+	"Irving",
+	"Juan",
+	"Pistachio",
+	"Pensi Didlo",
+	"embient_mp_highrise",
+	
 };
 
 void Bots::Initialize()
