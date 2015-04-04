@@ -60,7 +60,7 @@ class Global
 						typedef void(__cdecl* Cmd_AddCommand_t)(const char* name, void(*callback)());
 						typedef int(__cdecl* Cmd_ArgC_t)();
 						typedef const char*(__cdecl* Cmd_ArgV_t)(int index);
-						typedef void(__cdecl* Cmd_ExecuteCommand_t)(const char* command);
+						typedef void(__cdecl* Cmd_ExecuteCommand_t)(const char* command, bool sync);
 
 						// Functions
 						static Com_Printf_t         Com_Printf;

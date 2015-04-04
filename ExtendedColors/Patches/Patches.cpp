@@ -24,59 +24,58 @@ void Patches::Apply()
 	if (Addresses::ColoredName) QNOP(Addresses::ColoredName, 5);
 
 	// Allow colored names ingame
-	QCALL(Addresses::ClientUserinfoChanged, Patches::ClientUserinfoChanged_Hook, QPATCH_JUMP);
+	QCALL(Addresses::ClientUserinfoChanged, Patches::ClientUserinfoChanged_Stub, QPATCH_JUMP);
 
 	// Below is multiplayer only
 	if (Global::Game::Type == GAME_TYPE_ZM) return;
 
 	// Apply colors to killfeed
-	QCALL(Addresses::GetClientName1, Patches::CL_GetClientName_Hook, QPATCH_CALL);
-	QCALL(Addresses::GetClientName2, Patches::CL_GetClientName_Hook, QPATCH_CALL);
+	QCALL(Addresses::GetClientName1, Patches::CL_GetClientName_Stub, QPATCH_CALL);
+	QCALL(Addresses::GetClientName2, Patches::CL_GetClientName_Stub, QPATCH_CALL);
 
 	// Colors in spectator
-	if (Addresses::GetClientName3) QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Hook, QPATCH_CALL);
+	if (Addresses::GetClientName3) QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Stub, QPATCH_CALL);
 }
 
-void __declspec(naked) Patches::ClientUserinfoChanged_Hook()
+void __declspec(naked) Patches::ClientUserinfoChanged_Stub()
 {
 	__asm
 	{
 		mov eax, [esp + 4h]
 		dec eax
 
-		push edi
-		push esi
+		pusha
 		push eax // length
 		push ecx // name
 		push edx // buffer
 
 		call strncpy
 
-		pop edx
-		pop ecx
-		pop eax
-		pop esi
-		pop edi
+		add esp, 0Ch
+		popa
 
 		retn
 	}
 }
 		
-char* Patches::CL_GetClientName_Hook(int a1, int a2, char* buffer, int a4, int a5)
+char* Patches::CL_GetClientName_Stub(LocalClientNum_t localClientNum, int index, char *buf, int _size, bool addClanName)
 {
 	QNOP(Addresses::ICleanStrHook, 5);
 
 	__asm
 	{
-		push a5
-		push a4
-		push buffer
-		push a2
-		push a1
+		xor eax, eax
+		mov al, addClanName
+
+		push eax
+		push _size
+		push buf
+		push index
+		push localClientNum
 		call Addresses::GetClientName
 		add esp, 14h
 	}
 
 	QCALL(Addresses::ICleanStrHook, Addresses::ICleanStr, QPATCH_CALL);
-	strcat(buffer, "^7");
+	strcat(buf, "^7");
 }

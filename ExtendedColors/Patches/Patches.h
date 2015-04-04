@@ -6,6 +6,6 @@ class Patches
 
 	private:
 
-		static void ClientUserinfoChanged_Hook();
-		static char* CL_GetClientName_Hook(int a1, int a2, char* buffer, int a4, int a5);
+		static void ClientUserinfoChanged_Stub();
+		static char* CL_GetClientName_Stub(LocalClientNum_t localClientNum, int index, char *buf, int _size, bool addClanName);
 };

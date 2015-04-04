@@ -58,7 +58,6 @@ char* Bots::NameList[] =
 	"Pistachio",
 	"Pensi Didlo",
 	"embient_mp_highrise",
-	
 };
 
 void Bots::Initialize()
@@ -89,7 +88,7 @@ void Bots::PostInit()
 
 void Bots::Spawn_f()
 {
-	int count = (Global::Dependency::Import::Cmd_ArgC() > 1 ? atoi(Global::Dependency::Import::Cmd_ArgV(1)) : 1);
+	unsigned int count = (Global::Dependency::Import::Cmd_ArgC() > 1 ? atoi(Global::Dependency::Import::Cmd_ArgV(1)) : 1);
 
 	// Check if ingame and host
 	if (Functions::SV_Loaded())
@@ -122,7 +121,7 @@ void Bots::ChangeClass_f()
 	Notify::NotifyClient(client, "menuresponse");
 }
 
-void Bots::Spawn(int count)
+void Bots::Spawn(unsigned int count)
 {
 	int error = 0;
 
@@ -149,11 +148,11 @@ void Bots::Spawn(int count)
 	}
 
 	// Wait 1 second for the bots to join the game
-	Global::Dependency::Import::Cmd_ExecuteCommand("wait 100;");
+	Global::Dependency::Import::Cmd_ExecuteCommand("wait 100;", false);
 
-	for (int i = 0; i < entRefs.size(); i++)
+	for (unsigned int i = 0; i < entRefs.size(); i++)
 	{
 		// Change bot class
-		Global::Dependency::Import::Cmd_ExecuteCommand(va("autoChangeClass %d;", entRefs[i]->number));
+		Global::Dependency::Import::Cmd_ExecuteCommand(va("autoChangeClass %d;", entRefs[i]->number), false);
 	}
 }
