@@ -11,13 +11,13 @@ int Global::Main::PreInit()
 		return FALSE;
 	}
 
-	char* result = Global::Dependency::Loaded();
+	/*char* result = Global::Dependency::Loaded();
 
 	if (result)
 	{
 		MessageBox(0, va("Dependency '%s' not loaded!", result), PROJECTLONG, MB_ICONERROR);
 		return FALSE;
-	}
+	}*/
 
 	if (!Global::Dependency::Import::LoadImports())
 	{

@@ -14,8 +14,8 @@ EXPORT int32_t PostInit()
 
 EXPORT int32_t AuthorInfo()
 {
-	printf("https://github.com/momo5502\n");
-	return TRUE;
+	//printf("https://github.com/momo5502\n");
+	return (int32_t)"momo5502";
 }
 
 EXPORT int32_t ExtendedInfo()
@@ -32,7 +32,7 @@ EXPORT int32_t OfficialMod()
 // Dependencies that need to be loaded.
 EXPORT int32_t DependencyCount()
 {
-	return 0; // SteamAPI seems to be bugged
+	//return 0; // SteamAPI seems to be bugged
 	return Global::Dependency::Count();
 }
 
