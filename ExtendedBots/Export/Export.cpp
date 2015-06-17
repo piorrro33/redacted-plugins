@@ -2,46 +2,46 @@
 
 #pragma region APIExport
 
-EXPORT int32_t __stdcall PreInit()
+EXPORT uint64_t CONVENTION PreInit()
 {
 	return Global::Main::PreInit();
 }
 
-EXPORT int32_t __stdcall PostInit()
+EXPORT uint64_t CONVENTION PostInit()
 {
 	return Global::Main::PostInit();
 }
 
-EXPORT int32_t __stdcall AuthorInfo()
+EXPORT uint64_t CONVENTION AuthorInfo()
 {
 	//printf("https://github.com/momo5502\n");
-	return (int32_t)"momo5502";
+	return (uint64_t)"momo5502";
 }
 
-EXPORT int32_t __stdcall ExtendedInfo()
+EXPORT uint64_t CONVENTION ExtendedInfo()
 {
-	return (int32_t)(PROJECTLONG "\n");
+	return (uint64_t)(PROJECTLONG "\n");
 }
 
-EXPORT int32_t __stdcall OfficialMod()
+EXPORT uint64_t CONVENTION OfficialMod()
 {
 	// Let's consider this an official one ;)
 	return TRUE;
 }
 
 // Dependencies that need to be loaded.
-EXPORT int32_t __stdcall DependencyCount()
+EXPORT uint64_t CONVENTION DependencyCount()
 {
 	//return 0; // SteamAPI seems to be bugged
 	return Global::Dependency::Count();
 }
 
-EXPORT const char * __stdcall GetDependency(uint32_t Index)
+EXPORT uint64_t CONVENTION GetDependency(uint32_t Index)
 {
-	return Global::Dependency::Get(Index);
+	return (uint64_t)Global::Dependency::Get(Index);
 }
 
-EXPORT int32_t __stdcall SendMessageB(const char *Message)
+EXPORT uint64_t CONVENTION SendMessageB(const char *Message, void* Callback)
 {
 	return Global::Main::ParseMessage(Message);
 }
