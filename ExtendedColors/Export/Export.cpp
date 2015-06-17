@@ -2,46 +2,46 @@
 
 #pragma region APIExport
 
-EXPORT int32_t PreInit()
+EXPORT int32_t __stdcall PreInit()
 {
 	return Global::Main::PreInit();
 }
 
-EXPORT int32_t PostInit()
+EXPORT int32_t __stdcall PostInit()
 {
 	return Global::Main::PostInit();
 }
 
-EXPORT int32_t AuthorInfo()
+EXPORT int32_t __stdcall AuthorInfo()
 {
 	//printf("https://github.com/momo5502\n");
 	return (int32_t)"momo5502";
 }
 
-EXPORT int32_t ExtendedInfo()
+EXPORT int32_t __stdcall ExtendedInfo()
 {
 	return (int32_t)(PROJECTLONG "\n");
 }
 
-EXPORT int32_t OfficialMod()
+EXPORT int32_t __stdcall OfficialMod()
 {
 	// Let's consider this an official one ;)
 	return TRUE;
 }
 
 // Dependencies that need to be loaded.
-EXPORT int32_t DependencyCount()
+EXPORT int32_t __stdcall DependencyCount()
 {
 	//return 0; // SteamAPI seems to be bugged
 	return Global::Dependency::Count();
 }
 
-EXPORT const char *GetDependency(uint32_t Index)
+EXPORT const char * __stdcall GetDependency(uint32_t Index)
 {
 	return Global::Dependency::Get(Index);
 }
 
-EXPORT int32_t SendMessageB(const char *Message)
+EXPORT int32_t __stdcall SendMessageB(const char *Message)
 {
 	return Global::Main::ParseMessage(Message);
 }
