@@ -165,12 +165,13 @@ bool Global::Dependency::Import::LoadImports()
 {
 	// Get ExtendedConsole handle
 	HMODULE extendedConsole = GetModuleHandleA("ExtendedConsole.Red32n");
+	HMODULE steamAPI = GetModuleHandleA("steam_api.dll");
 
 	// ExtendedConsole not loaded properly
-	if (!extendedConsole) return 0;
+	if (!extendedConsole || !steamAPI) return 0;
 
 	// Get exports from ExtendedConsole
-	Com_Printf         = (Com_Printf_t)GetProcAddress(extendedConsole, "Com_Printf");
+	Com_Printf         = (Com_Printf_t)GetProcAddress(steamAPI, "Com_Printf");
 	Cmd_AddCommand     = (Cmd_AddCommand_t)GetProcAddress(extendedConsole, "Cmd_AddCommand");
 	Cmd_ArgC           = (Cmd_ArgC_t)GetProcAddress(extendedConsole, "Cmd_ArgC");
 	Cmd_ArgV           = (Cmd_ArgV_t)GetProcAddress(extendedConsole, "Cmd_ArgV");

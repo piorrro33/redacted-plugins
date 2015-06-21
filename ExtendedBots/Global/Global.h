@@ -56,7 +56,7 @@ class Global
 					public:
 
 						// Types
-						typedef void(__cdecl* Com_Printf_t)(const char* message, ...);
+						typedef void(__cdecl* Com_Printf_t)(int channel, const char* message, ...);
 						typedef void(__cdecl* Cmd_AddCommand_t)(const char* name, void(*callback)());
 						typedef int(__cdecl* Cmd_ArgC_t)();
 						typedef const char*(__cdecl* Cmd_ArgV_t)(int index);
