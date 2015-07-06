@@ -18,6 +18,9 @@ public:
 	// Spectator
 	static DWORD GetClientName3;
 
+	// Chat
+	static DWORD GSayCleanChat;
+
 	// I_CleanStr hook
 	static DWORD ICleanStrHook;
 	static DWORD ICleanStr;

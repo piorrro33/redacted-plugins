@@ -18,6 +18,9 @@ DWORD Addresses::GetClientName2        = 0x7A29AC;
 // Spectator
 DWORD Addresses::GetClientName3        = 0x9773D3;
 
+// Chat
+DWORD Addresses::GSayCleanChat         = 0x0;
+
 // I_CleanStr hook
 DWORD Addresses::ICleanStrHook         = 0x61E6EA;
 DWORD Addresses::ICleanStr             = 0x6DAF80;
@@ -141,4 +144,5 @@ void Addresses::Assign()
 void Addresses::AssignFromPattern()
 {
 	//TODO: Use patterns
+	Addresses::GSayCleanChat = (DWORD)Patterns::FindPattern((uint8_t*)"\xE8\x00\x00\x00\x00\x8B\x15\x00\x00\x00\x00\x52\xE8\x00\x00\x00\x00\x8B\x8C\x24\x00\x00\x00\x00", "x????xx????xx????xxx????");
 }

@@ -26,6 +26,9 @@ void Patches::Apply()
 	// Allow colored names ingame
 	QCALL(Addresses::ClientUserinfoChanged, Patches::ClientUserinfoChanged_Stub, QPATCH_JUMP);
 
+	// Allow colors in chat
+	QNOP(Addresses::GSayCleanChat, 5);
+
 	// Below is multiplayer only
 	if (Global::Game::Type == GAME_TYPE_ZM) return;
 
