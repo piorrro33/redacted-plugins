@@ -18,7 +18,7 @@ char* Bots::NameList[] =
 	"Jesus",
 	"CreaTed",
 	"Anarchy",
-	"Ahex",
+	"Ahrx",
 	"Icecream",
 	"Magic",
 	"avol",
