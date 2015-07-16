@@ -2,6 +2,8 @@
 
 #define MIN_NAME_LENGTH 3
 
+bool Patches::skipStringClean = false;
+
 void Patches::Apply()
 {
 	// Patch RB_LookupColor()
@@ -35,9 +37,28 @@ void Patches::Apply()
 	// Apply colors to killfeed
 	QCALL(Addresses::GetClientName1, Patches::CL_GetClientName_Stub, QPATCH_CALL);
 	QCALL(Addresses::GetClientName2, Patches::CL_GetClientName_Stub, QPATCH_CALL);
+	QCALL(Addresses::ICleanStrHook,  Patches::ICleanStr_Stub,        QPATCH_CALL);
 
 	// Colors in spectator
 	if (Addresses::GetClientName3) QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Stub, QPATCH_CALL);
+}
+
+void __declspec(naked) Patches::ICleanStr_Stub()
+{
+	__asm
+	{
+		xor eax, eax
+		mov al, Patches::skipStringClean
+		mov Patches::skipStringClean, 0
+		test eax, eax
+
+		jnz returnSafe
+
+		jmp Addresses::ICleanStr
+
+	returnSafe:
+		retn
+	}
 }
 
 void __declspec(naked) Patches::ClientUserinfoChanged_Stub()
@@ -63,7 +84,9 @@ void __declspec(naked) Patches::ClientUserinfoChanged_Stub()
 		
 char* Patches::CL_GetClientName_Stub(LocalClientNum_t localClientNum, int index, char *buf, int _size, bool addClanName)
 {
-	QNOP(Addresses::ICleanStrHook, 5);
+	Patches::skipStringClean = true;
+
+	//QNOP(Addresses::ICleanStrHook, 5);
 
 	__asm
 	{
@@ -79,6 +102,6 @@ char* Patches::CL_GetClientName_Stub(LocalClientNum_t localClientNum, int index,
 		add esp, 14h
 	}
 
-	QCALL(Addresses::ICleanStrHook, Addresses::ICleanStr, QPATCH_CALL);
+	//QCALL(Addresses::ICleanStrHook, Addresses::ICleanStr, QPATCH_CALL);
 	strcat(buf, "^7");
 }
