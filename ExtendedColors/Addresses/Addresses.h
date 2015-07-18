@@ -18,6 +18,9 @@ public:
 	// Spectator
 	static DWORD GetClientName3;
 
+	// Demo
+	static DWORD GetClientName4;
+
 	// Chat
 	static DWORD GSayCleanChat;
 

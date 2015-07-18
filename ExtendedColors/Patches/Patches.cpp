@@ -41,6 +41,9 @@ void Patches::Apply()
 
 	// Colors in spectator
 	if (Addresses::GetClientName3) QCALL(Addresses::GetClientName3, Patches::CL_GetClientName_Stub, QPATCH_CALL);
+
+	// Colors in demo overlay
+	if (Addresses::GetClientName4) QCALL(Addresses::GetClientName4, Patches::CL_GetClientName_Stub, QPATCH_CALL);
 }
 
 void __declspec(naked) Patches::ICleanStr_Stub()

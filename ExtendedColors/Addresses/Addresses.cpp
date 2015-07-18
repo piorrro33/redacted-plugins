@@ -18,8 +18,11 @@ DWORD Addresses::GetClientName2        = 0x7A29AC;
 // Spectator
 DWORD Addresses::GetClientName3        = 0x9773D3;
 
+// Demo
+DWORD Addresses::GetClientName4        = 0x9773D3;
+
 // Chat
-DWORD Addresses::GSayCleanChat         = 0x0;
+DWORD Addresses::GSayCleanChat         = 0x98D72D;
 
 // I_CleanStr hook
 DWORD Addresses::ICleanStrHook         = 0x61E6EA;
@@ -93,6 +96,9 @@ void Addresses::Assign()
 			// Spectator
 			Addresses::GetClientName3        = 0x9795A3;
 
+			// Demo
+			Addresses::GetClientName4        = 0x98F97D;
+
 			// I_CleanStr hook
 			Addresses::ICleanStrHook         = 0x5B0FEA;
 			Addresses::ICleanStr             = 0x44F2B0;
@@ -124,6 +130,9 @@ void Addresses::Assign()
 
 			// Spectator
 			Addresses::GetClientName3        = 0; // Dedi doesn't need that
+
+			// Demo
+			Addresses::GetClientName4        = 0; // Dedi doesn't need that
 
 			// I_CleanStr hook
 			Addresses::ICleanStrHook         = 0x51198B;
