@@ -94,17 +94,19 @@ void Bots::Spawn_f()
 	// Check if ingame and host
 	if (Functions::SV_Loaded())
 	{
-		if (!strcmp(Global::Dependency::Import::Cmd_ArgV(1), "all"))
+		if (!strcmp(Global::Dependency::Import::Cmd_ArgV(1), "all")) count = -1;
+
+		count = Bots::Spawn(count);
+
+		if (count)
 		{
-			Bots::Spawn(-1);
-			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", "Max. amount of bots spawned", 3000);
-			Global::Dependency::Import::Com_Printf(1, "Max. amount of bots spawned successfully!\n");
+			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", va("%d %s spawned", count, (count == 1 ? "bot" : "bots")), 3000);
+			Global::Dependency::Import::Com_Printf(1, "%d %s spawned successfully!\n", count, (count == 1 ? "bot" : "bots"));
 		}
 		else
 		{
-			Bots::Spawn(count);
-			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", va("%d %s spawned", count, (count == 1 ? "bot" : "bots")), 3000);
-			Global::Dependency::Import::Com_Printf(1, "%d %s spawned successfully!\n", count, (count == 1 ? "bot" : "bots"));
+			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^1Error", "Unable to spawn new bots!", 3000);
+			Global::Dependency::Import::Com_Printf(1, "Unable to spawn new bots!");
 		}
 	}
 	else
@@ -125,7 +127,7 @@ void Bots::ChangeClass_f()
 	Notify::NotifyClient(client, "menuresponse");
 }
 
-void Bots::Spawn(unsigned int count)
+unsigned int Bots::Spawn(unsigned int count)
 {
 	int error = 0;
 
@@ -159,4 +161,6 @@ void Bots::Spawn(unsigned int count)
 		// Change bot class
 		Global::Dependency::Import::Cmd_ExecuteCommand(va("autoChangeClass %d;", entRefs[i]->number), false);
 	}
+
+	return entRefs.size();
 }

@@ -14,7 +14,7 @@ class Bots
 
 		static void Initialize();
 		static void PostInit();
-		static void Spawn(unsigned int count);
+		static unsigned int Spawn(unsigned int count);
 
 	private:
 
