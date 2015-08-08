@@ -61,6 +61,7 @@ class Global
 						typedef int(__cdecl* Cmd_ArgC_t)();
 						typedef const char*(__cdecl* Cmd_ArgV_t)(int index);
 						typedef void(__cdecl* Cmd_ExecuteCommand_t)(const char* command, bool sync);
+						typedef void(__cdecl* ShowToast_t)(const char* image, const char* title, const char* description, int length);
 
 						// Functions
 						static Com_Printf_t         Com_Printf;
@@ -68,6 +69,7 @@ class Global
 						static Cmd_ArgC_t           Cmd_ArgC;
 						static Cmd_ArgV_t           Cmd_ArgV;
 						static Cmd_ExecuteCommand_t Cmd_ExecuteCommand;
+						static ShowToast_t          ShowToast;
 
 						// Other
 						static bool LoadImports();

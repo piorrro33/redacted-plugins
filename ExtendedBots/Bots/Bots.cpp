@@ -97,16 +97,19 @@ void Bots::Spawn_f()
 		if (!strcmp(Global::Dependency::Import::Cmd_ArgV(1), "all"))
 		{
 			Bots::Spawn(-1);
+			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", "Max. amount of bots spawned", 3000);
 			Global::Dependency::Import::Com_Printf(1, "Max. amount of bots spawned successfully!\n");
 		}
 		else
 		{
 			Bots::Spawn(count);
+			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", va("%d bots spawned", count), 3000);
 			Global::Dependency::Import::Com_Printf(1, "%d bots spawned successfully!\n", count);
 		}
 	}
 	else
 	{
+		Global::Dependency::Import::ShowToast("hud_medals_headshot", "^1Error", "You need to be host to spawn bots!", 3000);
 		Global::Dependency::Import::Com_Printf(1, "You need to be host to spawn bots!\n");
 	}
 }

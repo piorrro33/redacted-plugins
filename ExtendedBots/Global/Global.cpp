@@ -159,6 +159,7 @@ Global::Dependency::Import::Cmd_AddCommand_t     Global::Dependency::Import::Cmd
 Global::Dependency::Import::Cmd_ArgC_t           Global::Dependency::Import::Cmd_ArgC;
 Global::Dependency::Import::Cmd_ArgV_t           Global::Dependency::Import::Cmd_ArgV;
 Global::Dependency::Import::Cmd_ExecuteCommand_t Global::Dependency::Import::Cmd_ExecuteCommand;
+Global::Dependency::Import::ShowToast_t          Global::Dependency::Import::ShowToast;
 
 // Other
 bool Global::Dependency::Import::LoadImports()
@@ -176,9 +177,11 @@ bool Global::Dependency::Import::LoadImports()
 	Cmd_ArgC           = (Cmd_ArgC_t)GetProcAddress(extendedConsole, "Cmd_ArgC");
 	Cmd_ArgV           = (Cmd_ArgV_t)GetProcAddress(extendedConsole, "Cmd_ArgV");
 	Cmd_ExecuteCommand = (Cmd_ExecuteCommand_t)GetProcAddress(extendedConsole, "Cmd_ExecuteCommand");
+	ShowToast          = (ShowToast_t)GetProcAddress(extendedConsole, "ShowToast");
 
 	// Return if exports got loaded
-	return (Com_Printf     &&
+	return (ShowToast      &&
+		    Com_Printf     &&
 		    Cmd_AddCommand && 
 			Cmd_ArgC       &&
 			Cmd_ArgV       &&
