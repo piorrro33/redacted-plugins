@@ -103,8 +103,8 @@ void Bots::Spawn_f()
 		else
 		{
 			Bots::Spawn(count);
-			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", va("%d bots spawned", count), 3000);
-			Global::Dependency::Import::Com_Printf(1, "%d bots spawned successfully!\n", count);
+			Global::Dependency::Import::ShowToast("hud_medals_headshot", "^2Success", va("%d %s spawned", count, (count == 1 ? "bot" : "bots")), 3000);
+			Global::Dependency::Import::Com_Printf(1, "%d %s spawned successfully!\n", count, (count == 1 ? "bot" : "bots"));
 		}
 	}
 	else
