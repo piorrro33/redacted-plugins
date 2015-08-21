@@ -59,6 +59,9 @@ char* Bots::NameList[] =
 	"Pensi Didlo",
 	"embient_mp_highrise",
 	"sokie",
+	"cake",
+	"PlusLosers",
+	"RekZ",
 };
 
 void Bots::Initialize()
