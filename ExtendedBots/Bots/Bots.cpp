@@ -62,6 +62,14 @@ char* Bots::NameList[] =
 	"cake",
 	"PlusLosers",
 	"RekZ",
+	"Piorrro33",
+	"Shit Pickles",
+	"Baguette",
+	"Quickscope m8",
+	"Ghosts",
+	"Three Sixty",
+	"FineNerds",
+	"French Fries",
 };
 
 void Bots::Initialize()
